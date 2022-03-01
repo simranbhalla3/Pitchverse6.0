@@ -1,0 +1,1 @@
+web: gunicorn pitchers6.wsgi

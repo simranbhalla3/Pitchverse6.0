@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+
+<head>
+  <title>{% block title %}{% endblock %} | EDC TIET</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/sponsor.css' %}" />
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/gif" sizes="16x16">
+  <script src="{% static 'js/script.js' %}"></script>
+  <link rel="stylesheet" href="{% static  'css/timeline.css' %}" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/acab3432cc.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="../../../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+  <link rel="stylesheet"
+    href="{% static 'css/A.animate.cssowl.carousel.min.cssowl.theme.default.min.cssmagnific-popup.cssflaticon.cssstyle.cssMcc.pxp_juOZ79.css.pagespeed.cf.7CpgIooTGb.css' %}" />
+  <script>
+    (function (w, d) {
+      !(function (a, e, t, r, z) {
+        (a.zarazData = a.zarazData || {}),
+          (a.zarazData.executed = []),
+          (a.zarazData.tracks = []),
+          (a.zaraz = { deferred: [] });
+        var s = e.getElementsByTagName("title")[0];
+        (a.zarazData.c = e.cookie),
+          s && (a.zarazData.t = e.getElementsByTagName("title")[0].text),
+          (a.zarazData.w = a.screen.width),
+          (a.zarazData.h = a.screen.height),
+          (a.zarazData.j = a.innerHeight),
+          (a.zarazData.e = a.innerWidth),
+          (a.zarazData.l = a.location.href),
+          (a.zarazData.r = e.referrer),
+          (a.zarazData.k = a.screen.colorDepth),
+          (a.zarazData.n = e.characterSet),
+          (a.zarazData.o = new Date().getTimezoneOffset()), //
+          (a.dataLayer = a.dataLayer || []),
+          (a.zaraz.track = (e, t) => {
+            for (key in (a.zarazData.tracks.push(e), t))
+              a.zarazData["z_" + key] = t[key];
+          }),
+          (a.zaraz._preSet = []),
+          (a.zaraz.set = (e, t, r) => {
+            (a.zarazData["z_" + e] = t), a.zaraz._preSet.push([e, t, r]);
+          }),
+          a.dataLayer.push({ "zaraz.start": new Date().getTime() }),
+          a.addEventListener("DOMContentLoaded", () => {
+            var t = e.getElementsByTagName(r)[0],
+              z = e.createElement(r);
+            (z.defer = !0),
+              (z.src =
+                "../../cdn-cgi/zaraz/sd0d9.html?z=" +
+                btoa(encodeURIComponent(JSON.stringify(a.zarazData)))),
+              t.parentNode.insertBefore(z, t);
+          });
+      })(w, d, 0, "script");
+    })(window, document);
+  </script>
+  <style>
+    html {
+  scroll-behavior: smooth !important;
+}
+  </style>
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+  </style>
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+</head>
+
+<body>
+  <div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+      <h1 id="colorlib-logo" class="mb-4 mb-md-5">
+        <img class="logo" src="{% static 'images/logo_pitchverse.png' %}">
+      </h1>
+      <nav id="colorlib-main-menu" role="navigation" style="text-align:center">
+        <ul>
+          <li 
+          {% if '/' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'index' %}">Home</a></li>
+          <li {% if 'index' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'index' %}#event">ABOUT</a></li>
+          <li {% if 'index' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'index' %}#pre-event">FLIP THE SCRIPT</a></li>
+          <li {% if 'gallery' == request.path %}
+          class="colorlib-active"{% endif %}><a href="{% url 'gallery' %}">Past Events</a></li>
+
+          {% comment %} {% if user.is_authenticated %}
+          <li {% if 'dashboard' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li {% if 'logout' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'logout' %}">Logout</a></li>
+          
+          {% else %}  {% endcomment %}
+          <li {% if 'register' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'register' %}">Register</a></li>
+        {% comment %} <li {% if 'login' == request.path %}
+          class="colorlib-active" {% endif %}><a href="{% url 'login' %}">Login</a></li>
+          {% endif %} {% endcomment %}
+        </ul>
+      </nav>
+    </aside>
+    <!--navbar-end-->
+{% block content %}{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script
+      src="{% static 'js/jquery-migrate-3.0.1.min.js%2bpopper.min.js%2bbootstrap.min.js.pagespeed.jc.MA6tdLu4e_.js' %}"></script>
+    <script>
+      eval(mod_pagespeed_bVMDwJfGrC);
+    </script>
+    <script>
+      eval(mod_pagespeed_GTjss9F958);
+    </script>
+    <script>
+      eval(mod_pagespeed_cQ_Rfbk2aw);
+    </script>
+    <script
+      src="{% static 'js/jquery.easing.1.3.js%2bjquery.waypoints.min.js%2bjquery.stellar.min.js%2bowl.carousel.min.js.pagespeed.jc.3vrUh_VSKu.js' %}"></script>
+    <script>
+      eval(mod_pagespeed_3CiffTaFYP);
+    </script>
+    <script>
+      eval(mod_pagespeed_O72Io$hXzP);
+    </script>
+    <script>
+      eval(mod_pagespeed_iYd2qXX7WY);
+    </script>
+    <script>
+      eval(mod_pagespeed_zeAzyIFzr7);
+    </script>
+    <script
+      src="{% static 'js/jquery.magnific-popup.min.js%2bjquery.animateNumber.min.js%2bscrollax.min.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.iGp3dz9GxV.js' %}"></script>
+    <script>
+      eval(mod_pagespeed_lwWpq7TMas);
+    </script>
+    <script>
+      eval(mod_pagespeed_DWpFc8XhzQ);
+    </script>
+    <script>
+      eval(mod_pagespeed__j5r58b57G);
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+    <script>
+      eval(mod_pagespeed_rPxiN0qmf8);
+    </script>
+    <script>
+      eval(mod_pagespeed_tK2LD0YHjT);
+    </script>
+
+</body>
+
+</html>

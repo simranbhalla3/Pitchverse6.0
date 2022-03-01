@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}PitchVerse{% endblock %}
+{% block content %}
+
+<div id="colorlib-main">
+  <section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container px-md-0" style="padding-left: 0; padding-right: 0">
+      <div class="row d-flex no-gutters">
+        <div class="col-md-12 portfolio-wrap">
+          <div class="row no-gutters align-items-center">
+            <div class="col-md-12 img js-fullheight d-flex align-items-center justify-content-center" style="
+                      ;
+                      height: fit-content;
+                    ">
+            
+              <img class="landing" src="./static/images/pitchverse bg.png"  style="z-index: 0 !important;">
+              {% comment %} <img class="landing_phone" src="./static/images/pitchverse phone bg.png" style="z-index: 0 !important;"> {% endcomment %}
+              
+              <div class="qqq" style="
+                        float: right !important;
+                        display: flex;
+                        position:absolute;
+                        justify-content: space-between;
+                        padding-right: 20px;
+                        text-decoration: none;
+                        white-space: nowrap;
+                        text-align: center;
+                        padding-top: 0rem;
+                        {% comment %} padding-left:46rem; {% endcomment %}
+                        padding-right: 2rem;
+                        bottom:1.75rem;
+                      ">
+                  
+
+
+
+                <a href="{% url 'register' %}" class="button-56" role="button" style="
+                          display: inline-block !important;
+                          padding: 10px 37px ;
+                          margin: 115px;
+                        ">
+                  <b>Register for Pitchverse</b>
+            </a>
+                 <a  href="{% url 'pre-event-reg' %}"id="signinbutton" class="button-56" role="button" style="
+                          width: fit-content;
+                          text-decoration: none;
+                          padding: 10px 25px;
+                          margin: 115px;
+                        ">
+                  <b>Register for Flip The Script</b>
+                </a> 
+              </div>
+              <!-- <div
+                      class="icon d-flex align-items-center justify-content-center">
+                      <span class="fa fa-expand"></span>
+                    </div> -->
+                  </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+        <div class="col-md-12 portfolio-wrap" id="event">
+          <div class="row no-gutters align-items-center">
+            <img src="{% static 'images/about_event.png' %}"
+              class="col-md-6 order-md-last img js-fullheight d-flex align-items-center justify-content-center phone laptop" />
+            <!-- <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-expand"></span>
+                </div> -->
+
+            <div class="col-md-6">
+              <div class="text pt-5 px-md-5 ftco-animate">
+                <div class="px-4 px-lg-4" style="margin: -60px">
+                  <div class="desc text-md-right">
+                    <div class="top" style="font-style: inherit; text-align: center">
+                      <h2 class="mb-4">
+                        About the Event
+                      </h2>
+                    </div>
+                    <div class="absolute">
+                      <p class="about_event" style="margin:30px;align-items: left;">
+
+                        PitchVerse  the annual flagship event of the
+                        Entrepreneurship Development Cell wherein students
+                        who are yet to dive into the testing waters with
+                        their own startup ideas are provided with a mock
+                        simulation of strategies adopted by already
+                        successful startups. 
+                      </p>
+                        <p class="about_event" style="margin:30px">
+
+                        It includes telling about the
+                        main arena of work / services of the startup, past
+                        activities and ongoing activities of the startup,
+                        and future expectations and ideas of the same.
+                        </p>
+
+                        <p class="about_event" style="margin:30px">
+
+                        Students are divided into teams and each team is given
+                        a different case study. They will then compete and
+                        win the overall event just on the basis of
+                        pitching.
+                      </p>
+                    </div>
+                    <!-- <p><a href="single.html" class="custom-btn">View Portfolio</a></p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 portfolio-wrap" id="pre-event">
+          <div class="row no-gutters align-items-center">
+            <img src="{% static 'images/crowdfunding.jpeg' %}"
+              class="col-md-6 img js-fullheight d-flex align-items-center justify-content-center phone laptop" />
+            <!-- <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-expand"></span>
+                    </div> -->
+
+            <div class="col-md-6">
+              <div class="text pt-5 px-md-5 ftco-animate">
+                <div class="px-4 px-lg-4" style="margin: -60px">
+                  <div class="desc text-md-right">
+                    <div class="top" style="font-style: inherit; text-align: center">
+                      <h2 class="mb-4" styel="padding-top:40px">
+                        Flip The Script
+                      </h2>
+                    </div>
+                    <div class="flexx">
+                      <div class="absolute">
+                        <p class="about_event" style=" text-align: justify !important;">
+                          This event comprises of two rounds where you will get a chance to showcase yourself in
+                          terms of business intellect and communication skills.
+                          <br><br>
+                          Round 1 is a crowdfunding event in which each team is assigned a parent company and is
+                          tasked with introducing and pitching a new service that will assist the parent firm in
+                          expanding its services into a new industry.
+                          <br><br>
+                          The top teams from Round 1 will proceed to Round 2, where they will be assigned a company
+                          and a competitor. The teams will be crafting a pitch detailing how they’ll deal with the
+                          opponent, which will be judged on a range of factors.
+                        </p>
+                        <div class="flexx">
+                          <a href="{% url 'pre-event-reg' %}" class="button-56" role="button">
+                            <b class="newr">Register</b>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- timeline starts here -->
+        <div class="timeline_title">Schedule</div>
+        <div class="container">
+          <div class="main-timeline">
+            <!-- start experience section-->
+            <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">25 February</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Registration Begins</h5>
+                <p class="description" style="color: white">
+                  It’s time to get in the game!
+Register to get in the gamble.
+And don’t forget to connect with us on our discord channel where you will get updates for our event and have a chance to get familiar with your fellows.
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+            <!-- start experience section-->
+            <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">1 March</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Time To Flip-The-Script</h5>
+                <p class="description" style="color: white">
+                  It's time for the warm up round before the main battle. It's to make you aware about what you are up for.
+It's time for the pre- event
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+            <!-- start experience section-->
+            <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">2 March</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Team Allotment Begins</h5>
+                <p class="description" style="color: white">
+                  It’s time to make your crew for Pitch Verse.
+Now that you’ve registered individually, select your team members. For those who are unable to form their groups, it’ll be our responsibility to allot the teams to them! 
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+
+            <!-- start experience section-->
+            <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">3 March</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Registrations Close</h5>
+                <p class="description" style="color: white">
+                  Registrations are done, teams are formed. Sit back and wait for what’s to come, for it is going to be a mind-boggling adventure.
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+
+            
+             <!-- start experience section-->
+             <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">5 March</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Day 1</h5>
+                <p class="description" style="color: white">
+                  Companies have been alloted, Challenges have been explained, Mentors are seated. It's time for the pitching battle to start.
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+             <!-- start experience section-->
+             <div class="timeline">
+              <div class="icon"></div>
+              <div class="date-content">
+                <div class="date-outer">
+                  <span class="date">
+                    <span class="month">6 March</span>
+                    <span class="year">2022</span>
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h5 class="title">Main Event Day</h5>
+                <p class="description" style="color: white">
+                  Qualified Teams move to the next round, ready to face the Judges. It's time for the final pitching battle to start.
+It's the main day
+                </p>
+              </div>
+            </div>
+            <!-- end experience section-->
+          </div>
+        </div> 
+
+        <div class="big_text">
+          <hr color="white" />
+          REGISTRATIONS OPEN
+          <!-- timer starts here -->
+          <div id="timer"></div>
+          <!-- timer ends here -->
+          <div class="flexx" style="margin-bottom: 10px">
+            <a href="{% url 'register' %}" class="button-56" role="button"><b class="newr">Register Now</b></a>
+          </div>
+        </div>
+        <hr color="white" />
+      </div>
+      <div class="portfolio-wrap">
+        <div class="row no-gutters align-items-center">
+          <div class="holder">
+            <!-- FAQ STARTS HERE -->
+            <div class="center" style="
+                      color: white;
+                      padding-left: 4rem;
+                      font-size: 4rem;
+                      font-weight: bold;
+                      font-family: 'Poppins', sans-serif;
+                    ">
+              FAQS
+            </div>
+            <br />
+
+            <div class="content" style="max-width:80%">
+              <div>
+                <input type="checkbox" id="question1" name="q" class="questions" />
+                <div class="plus">+</div>
+                <label for="question1" class="question">
+                  Can Non-Thapar Students participate as well?
+                </label>
+                <div class="answers">
+                  No,the registrations are only open for Thapar students.
+                </div>
+              </div>
+              <div class="content">
+                <div>
+                  <input type="checkbox" id="question2" name="q" class="questions" />
+                  <div class="plus">+</div>
+                  <label for="question2" class="question">
+                    Is individual participation allowed?
+                  </label>
+                  <div class="answers">
+                    You can register individually if you do not have a team, and we will sort you into a team for
+                    the competition.
+                  </div>
+                </div>
+                <div class="content">
+                  <div>
+                    <input type="checkbox" id="question3" name="q" class="questions" />
+                    <div class="plus">+</div>
+                    <label for="question3" class="question">
+                      Is there any registration fees?
+                    </label>
+                    <div class="answers">\
+                      
+                      There is no registration fees .
+                    </div>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="question4" name="q" class="questions" />
+                    <div class="plus">+</div>
+                    <label for="question4" class="question">
+                      Can second year students participate as well?
+                    </label>
+                    <div class="answers">Any student, having passed school, enrolled in a college or university for
+                      higher education, can participate.</div>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="question5" name="q" class="questions" />
+                    <div class="plus">+</div>
+                    <label for="question5" class="question">
+                      Do we have to prepare a pitch before joining the competition?
+                    </label>
+                    <div class="answers">There is no need to prepare it before hand as your pitch will be dependent
+                      upon the company that you are assigned.</div>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="question6" name="q" class="questions" />
+                    <div class="plus">+</div>
+                    <label for="question6" class="question">
+                      Who will be sitting in the panel of judges?
+                    </label>
+                    <div class="answers">We will be having a number of entrepreneurs and public speakers in our
+                      jury.</div>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="question7" name="q" class="questions" />
+                    <div class="plus">+</div>
+                    <label for="question7" class="question">
+                      What exactly will happen during the PitchVerse competition?
+                    </label>
+                    <div class="answers">PitchVerse is a case study based, business planning and pitching competition.
+                      All participants will be divided into teams (if they are already not a part of one) and
+                      provided one case study (per team). You will have to create a pitch and a presentation, to
+                      pitch your company to potential investors, present ie our panel of judges and mentors.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+       <div class="container" style="padding-left: 0px; padding-right: 0px">
+          <h2 class="mb-4 font">Our Sponsors</h2>
+          <div class="slider">
+            <div class="slide-track">
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+              </div>
+              <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+              </div>
+            </div>
+          </div> 
+
+
+          {% include 'pitchers/footer.html' %}
+        </div>
+
+
+  </section>
+
+</div>
+{% endblock %}

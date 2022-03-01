@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Pre-Event-Register{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<div id="colorlib-main">
+  <section class="registration">
+    <div class="registration form">
+     
+      <div class="container">
+        <div class="content">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <!-- {{form.as_p}} -->
+            <div class="members">
+              <div class="title" style="font-family:Poppins,sans-serif">PRE EVENT REGISTRATION</div>
+              {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-success alert-dismissible fade show" role="alert">{{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {% endfor %}
+              {% endif %}
+              <div class="rollnumber" style="padding-top:1.9rem">
+                <div class="input-box">
+                  <span class="details">Enter Team Name</span>
+                  <input type="text" name="Team_name" placeholder="Team Name" required />
+                </div>
+              </div>
+
+              <p style="
+                        font-size: 1.5rem;
+                        color: white;
+                        text-align: left;
+                        margin-top: 20px;
+                      ">
+                Team Member 1
+              </p>
+              <div class="memberone">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" id ="Member1_name" name="Member1_name" placeholder="Enter your name" required />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" id="Member1_email" name="Member1_email" placeholder="Enter your email" required />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="tel" id="Member1_contact_no" name="Member1_contact_no" placeholder="Enter your number" required />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Are you a Thapar Student</span>
+                    <select id="Memebr1_are_you_a_thapar_student" name="Member1_are_you_a_thapar_student" list="select one" required >
+                    <datalist id="select one">
+                      <option value="True">Yes</option>
+                      <option value="False">No</option>
+                    </datalist>
+                    </select>
+                  </div> 
+
+                  
+                </div>
+                <div class="rollnumber">
+                  <div class="input-box">
+                    <span class="details">Enter your roll number if you're from Thapar else
+                      enter your college name</span>
+                    <input type="text" id="Member1_roll_no" name="Member1_roll_no" placeholder="Enter your Roll No." required />
+                  </div>
+                </div>
+                {% comment %} <div class="rollnumber" style="padding-top:1.9rem">
+                  <div class="input-box">
+                    <span class="details">Enter your
+                      Discord Id</span>
+                    <input type="text" id="Member1_discordid"name="Member1_discordid" placeholder="Example : Philander#1771" required />
+                  </div>
+                </div> {% endcomment %}
+                <div class="rollnumber" style="padding-top:1.9rem;padding-bottom:2rem">
+                  <div class="input-box">
+                    <span class="details" style="font-size:15px">Year of Study</span>
+                    <input type="text" id="Member1_year_of_study" placeholder="Enter your year of study" name="Member1_year_of_study" required>
+                  </div>
+
+                </div>
+                <hr color="white" style="
+                        width: 100% !important;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                      " />
+                <p style="
+                        font-size: 1.5rem;
+                        color: white;
+                        text-align: left;
+                        margin-top: 20px;
+                      ">
+                  Team Member 2
+                </p>
+                <div class="membertwo">
+                  <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Full Name</span>
+                      <input type="text" name="Member2_name" placeholder="Enter your name" />
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Email</span>
+                      <input type="email" name="Member2_email" placeholder="Enter your email" />
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Phone Number</span>
+                      <input type="tel" name="Member2_contact_no" placeholder="Enter your number" />
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Are you a Thapar Student</span>
+                      <select id="Memebr2_are_you_a_thapar_student" name="Member2_are_you_a_thapar_student" list="select one" />
+                    <!-- <datalist id="select one"> -->
+                      <option value="True">Yes</option>
+                      <option value="False">No</option>
+                    <!-- </datalist> -->
+                    </select>
+                    </div>
+
+                    
+                  </div> 
+                  <div class="rollnumber">
+                    <div class="input-box">
+                      <span class="details">Enter your roll number if you're from Thapar else
+                        enter your college name</span>
+                      <input type="text" name="Member2_roll_no" placeholder="Enter your Roll No." />
+                    </div>
+                  </div>
+                  {% comment %} <div class="rollnumber" style="padding-top:1.9rem">
+                    <div class="input-box">
+                      <span class="details">Enter your
+                        Discord Id</span>
+                      <input type="text" name="Member2_discordid" placeholder="Example : Philander#1771" />
+                    </div>
+                  </div> {% endcomment %}
+                  <div class="rollnumber" style="padding-top:1.9rem; padding-bottom:2rem">
+                    <div class="input-box">
+                      <span class="details" style="font-size:15px">Year of Study</span>
+                      <input type="text" placeholder="Enter your year of study" name="Member2_year_of_study">
+                    </div>
+
+                  </div>
+                </div>
+              </div> 
+              <button type="submit" class="button-56" role="button">
+                <b>Register</b>
+              </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% endblock %}

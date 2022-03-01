@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+	<!-- <div style="height: 85vh; display: flex; align-items: center; justify-content: center;">
+        <div style="">
+            <div class="section-title">
+                <br>
+                <h3 class="title"><span style="color: rgb(53, 47, 47);">Team Formation will start soon!</span></h3>
+                
+                <a href="https://discord.gg/JmGWRYSP" target="_blank" class="main-btn">Join Discord Server to make your Team</a>
+                <a href="{% url 'home' %}" class="main-btn">Go Back to Homepage</a>
+            </div>
+        </div>
+	</div> -->
+	{% if messages %}
+	<div class="container-fluid" style="background-color: rgba(67, 66, 115, 0.1); padding: 23px 0 23px 0;">
+		<div class="row">
+			<div style="text-align: center;">
+				{% for message in messages %}
+				<strong>{{ message }}</strong>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	<center>
+		<a href="{% url 'update_user' %}" class="main-btn">Update Your Profile</a>
+	</center>
+
+	{% if user.team %}
+
+	<div class="container" style="margin-top: 20px; overflow: hidden;">
+		<div class="row" style="display: flex; flex-wrap:wrap; justify-content: center; align-items: center;">
+			<div class="col-md-12 col-sm-12 box-t" style="max-width: 995px; min-height: 200px;">
+				<div class="section-title" style="margin-bottom: 10px;">
+					<h4 style="font-size: 30px;"><span style="color: rgb(53, 47, 47);">Instructions</span></h4>
+					<ol style="text-align: left;">
+						<li>1. The presentations/pdf of the case study must be submitted by 9 am tomorrow, i.e. 8th
+							November 2020. The process will start at 6 pm today. The details for the same will be
+							provided to you on today’s pre-event for Pitchers. They are to be submitted on the portal
+							itself. </li><br>
+						<li>2. The groups must update the position of their members by today midnight. </li><br>
+						<li>3. To download sample presentation, <a target="_blank"; style="color:#434273" href="https://drive.google.com/file/d/1ZCQeHuhehOrEtYYbisJaMw6iDrR1eeiH/view?usp=sharing">Click Here</a></li><br>
+					</ol>
+					<p style="text-align: left;">The link to our discord channel is <a
+							href="https://discord.gg/JmGWRYSP">https://discord.gg/JmGWRYSP</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="display: flex; flex-wrap:wrap; justify-content: center;">
+			<div class="col-lg-5 col-12 box-t">
+				<div class="section-title" style="margin-bottom: 10px;">
+					<h3 class="title" style="font-size: 30px; color: rgb(53, 47, 47);  font-weight: 700;">
+						{{ user.team.team_name }}<br></h3>
+					<div style="display: flex; justify-content: space-between; align-items: center; flex-direction: column;"
+						class="dash">
+
+						<div class="col-md-6 col-sm-12 box">
+							<center>
+								<h3 style="margin-bottom: 0px;">Team Members: </h3>
+							</center>
+							<table class="table " style="font-size: 18px;">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Name</th>
+										<th scope="col">Phone No.</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for u in team_members %}
+									<tr>
+										<th scope="row">{{forloop.counter}}.</th>
+										<td>{{u.name}} {% if u.position  %}
+											({{u.position}})
+											{% endif %}</td>
+										<td>{{u.contact_no}}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- <a href="{% url 'leave-team' %}" class="main-btn">Leave Team</a> -->
+				</div>
+
+			</div>
+			<div class="col-lg-5" style="padding: 0;">
+				
+				<div class="col-lg-12 box-m" style="padding: 0;">
+					<div style="text-align: justify;">
+						<h3>
+							Choose your position.
+						</h3>
+						<form method="POST" action="{% url 'update-position' %}" id="position_form">
+							{% csrf_token %}
+							{{ p_form }}
+							<div style="display: flex; justify-content: center;">
+							<button class="btn" style="background-color: rgb(67, 66, 115); color: white;"
+								type="submit">Update</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-12 box-m"
+					style="padding:0; background-image: url('static/competition/img/new.PNG'); background-repeat: no-repeat; background-position: 50% 0%;">
+					<a href="{{team.case_study_link}}">
+						<center>
+							<h2 style="color: #434273;">{{team.case_study_name}}</h2>
+							<h5>Click here to download to your Case Study</h5>
+						</center>
+					</a>
+					<center>
+					<div style="position: absolute; top: 10px; left:40%">
+						<H4>PITCHERS 6.0</H4>
+					</div>
+				</center>
+				</div>
+				<div class="col-lg-12 box-m">
+					<center>
+						<br>
+						<!-- <h2>Submissions Closed!!</h2> -->
+						<form method="POST" action="{% url 'submit_ppt' team.id %}" enctype="multipart/form-data">
+							{% csrf_token %}
+							<center>
+								<div class="drop-zone"
+									style="background-image: url(static/competition/img/down-arrow.png); background-repeat: no-repeat; background-position: 50% 15%;">
+									<span class="drop-zone__prompt" style="margin-top: 45px;">Drop file here or click to
+										upload</span>
+									<input accept= ".pdf, .ppt, .pptx" id="presentation" type="file" name="presentation" class="drop-zone__input">
+								</div>
+							</center>
+							<input class="main-btn" type="submit" value="Submit" style="margin: 10px auto 10px auto;"/>
+						</form>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	{% else %}
+
+	<div style="height: 80vh; display: flex; align-items: center; justify-content: center; margin-top:30px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-12">
+                    <div class="abcd">
+                        <img src="{% static 'competition/img/random.PNG' %}">
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div class="section-title">
+                        <br>
+                        <h3 class="title"><span style="font-size: 25px; line-height: 1.4; text-transform:none; font-weight: 600;color: rgb(53, 47, 47); text-align: justify;">Dear candidate,<br>
+							You have successfully registered yourself for the event. As you haven't formed any team yet, the finalized team will be alloted to you on 7th November by 12pm.</span></h3>
+                    </div>
+                </div>
+                <center>
+                <a href="https://discord.gg/JmGWRYSP" target="_blank" class="main-btn">Join Discord Server</a>
+                <a href="{% url 'home' %}" class="main-btn">Go Back to Homepage</a>
+                </center>
+            </div>
+        </div>
+	</div>
+
+
+
+	 <div class="container" style="margin-top: 20px;">
+		<div class="row" style="display: flex; flex-wrap:wrap; justify-content: center; align-items: center;">
+			<div class="col-md-12 col-sm-12 box-t" style="max-width: 995px; min-height: 200px;">
+				<div class="section-title" style="margin-bottom: 10px;">
+					<h4 style="font-size: 30px;"><span style="color: rgb(53, 47, 47);">Instructions</span></h4>
+					<p style="text-align: justify;">Now that you’ve completed the first step, that is registration, it’s
+						time to form your very own
+						crew! Make a team of 5 with your mates, and if you can’t, don’t worry, we’ve got you covered.
+						You can interact with your peers on our discord channel, get acquainted with them, and make your
+						teams. Not only that, our discord channel is to keep you updated about our event.
+						It is to keep in mind that only one member is to register on behalf of your team. They’ll
+						receive a code which is to be shared with their members. If you can’t complete your group, it is
+						the responsibility of team EDC to finalize it for you.</p> <br>
+					<p style="text-align: center;"></p>The link to our discord channel is <a
+						href="https://discord.gg/JmGWRYSP">https://discord.gg/JmGWRYSP</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="display: flex; flex-wrap:wrap; justify-content: center; align-items: center;">
+			<div id="create-box" class="col-md-5 col-sm-12 box-t">
+				<div class="section-title" style="margin-bottom: 10px;">
+					<h4 class="title" style="font-size: 30px;"><span style="color: rgb(53, 47, 47);">Create your own
+							team</span></h4>
+				</div>
+				<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+					<ul style="list-style-type: disc; padding:0 25px">
+						<li>Click on the create team button.</li>
+						<li>Enter your team name and click "Generate Code" Button.</li>
+						<li>Share the generated code with the rest of your teammates and ask them to join your team.
+						</li>
+					</ul>
+					<button id="create_button" onclick="create_button()" class="main-btn">Create Team</button><br>
+
+					<form method="POST" class="hide" action="{% url 'create_team' %}" id="create_form">
+						{% csrf_token %}
+						{{ c_form }}
+						<button class="btn" style="background-color: rgb(67, 66, 115); color: white;"
+							type="submit">Generate Code</button>
+					</form>
+				</div>
+			</div>
+			<div id="join-box" class="col-md-5 col-sm-12 box-t">
+				<div class="section-title" style="margin-bottom: 10px;">
+					<h4 class="title" style="font-size: 30px; margin-top: -20px;"><span
+							style="color: rgb(53, 47, 47);">Join an existing team </span></h4>
+				</div>
+				<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+					<ul style="list-style-type: disc; padding:0 25px">
+						<li>Click on the join team.</li>
+						<li>Enter the unique team code of the team you want to join.</li>
+						<li>Click on "Join" button, you will be automatically added to the team you filled the team code
+							of.</li>
+					</ul>
+					<button id="join_button" onclick="join_button()" class="main-btn">Join Team</button>
+					<form method="POST" class="hide" action="{% url 'join_team' %}" id="join_form">
+						{% csrf_token %}
+						{{ j_form  }}
+						<button class="btn" style="background-color: rgb(67, 66, 115); color: white;"
+							type="submit">Join</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+{% endif %}
+
+
+
+
+
+	
+
+
+
+
+
+{% include 'pitchers/footer.html' %}
+	{% endblock %}

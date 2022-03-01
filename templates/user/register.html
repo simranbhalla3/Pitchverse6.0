@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register Pitchers 6.0{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+      <div id="colorlib-main">
+        <section class="registration">
+          <div class="registration form">
+            
+            <div class="container">
+              <div class="title">Registration</div>
+
+              {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-{{message.tags}} alert-dismissible fade show mt-4" role="alert">{{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {% endfor %}
+              {% endif %}
+              <div class="content">
+                <form action="{% url 'register' %}" method="POST">
+                  {% csrf_token %}
+                   <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Full Name</span>
+                      <input
+                        type="text" id="name" name="name"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Email</span>
+                      <input
+                        type="email" id="email" name="email"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Phone Number</span>
+                      <input
+                        type="tel" id="contact_no" name="contact_no"
+                        placeholder="Enter your number"
+                        required
+                      />
+                    </div>
+                    {% comment %} <div class="input-box">
+                      <span class="details">Are you a Thapar Student</span>
+                      <select id="are_you_a_thapar_student" name="are_you_a_thapar_student" name="selected" list="select one" required/>
+                      <datalist id="select one">
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                      </datalist>
+                      </select>
+                    </div> {% endcomment %}
+
+                   
+                  
+                  {% comment %} <div class="rollnumber"> {% endcomment %}
+                    <div class="input-box">
+                      <span class="details"
+                        >Roll No.</span
+                      >
+                      <input type="text" id="roll_no" name="roll_no" placeholder="Enter Roll number" required />
+                    </div>
+                  </div>
+                  </div>
+                  <div class="rollnumber" >
+                    <div class="input-box">
+                      <span class="details" style="font-size:15px">Year of Study</span>
+                      <input type="number" id="year_of_study" placeholder="Enter your year of study" name="year_of_study" required>
+                    </div>
+  
+                  </div> 
+                  <div class="rollnumber" style="padding-top:1.9rem;">
+                    <div class="input-box">
+                      <span class="details" style="font-size:15px">Password</span>
+                      <input type="password" id="password1" placeholder="Enter your password" name="password1" required>
+                    </div>
+  
+                  </div> 
+                  <div class="rollnumber" style="padding-top:1.9rem;padding-bottom:2rem">
+                    <div class="input-box">
+                      <span class="details" style="font-size:15px">Confirm Password</span>
+                      <input type="password" id="password2" placeholder="Confirm Password" name="password2" required>
+                    </div>
+  
+                  </div> 
+                 
+                  <button type='submit' class="button-56" role="button">
+                    <b>Register</b>
+                  </button>
+                </form>
+                {% comment %} <p>Already registered <a href="">Login Here</a></p> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% endblock %}
